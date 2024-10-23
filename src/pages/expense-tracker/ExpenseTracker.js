@@ -3,7 +3,9 @@ import { useAddTransaction } from "../../hooks/useAddTransactions"
 import { useGetTransaction } from "../../hooks/useGetTransactions"
 import { useState } from 'react'
 import {useGetUserInfo} from "../../hooks/useGetUserInfo"
+import {signOut} from "firebase"
 import '../../styles/ExpenseTracker.css'
+
 function ExpenseTracker() {
   const {addTransaction} = useAddTransaction() 
   const {transactions} = useGetTransaction()
@@ -16,6 +18,10 @@ function ExpenseTracker() {
     e.preventDefault()
     addTransaction({description, transactionAmount,transactionType})
 
+  }
+
+  const signUserOut = async ()=>{
+    await signOut()
   }
   return (  
   <>
@@ -49,7 +55,7 @@ function ExpenseTracker() {
       {profilePhoto && 
       <div className="profile">
         <img className="profile-photo" src={profilePhoto}/>
-        <button>Sign out</button>
+        <button onClick={signUserOut}>Sign out</button>
       </div>}
     </div>
     <div className='transactions'>
