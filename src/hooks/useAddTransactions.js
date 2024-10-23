@@ -15,7 +15,10 @@ export const useAddTransaction = () => {
             transactionAmount,
             transactionType,
             createdAt:serverTimestamp(),
-        })
+        }).then(
+            console.log("Document has been added to the Transactions collection")
+        )
+        
     }
     
     return { addTransaction }
