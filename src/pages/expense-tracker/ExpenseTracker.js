@@ -1,7 +1,8 @@
 import React from 'react'
 
 function ExpenseTracker() {
-  return (
+  return (  
+  <>
     <div className='expense-tracker'>
       <div>
         <h1>Expense Tracker</h1>
@@ -30,6 +31,10 @@ function ExpenseTracker() {
         </form>
       </div>
     </div>
+    <div className='transactions'>
+      <h3>Transactions</h3>
+    </div>
+  </>
   )
 }
 
