@@ -1,6 +1,7 @@
 import React from 'react'
-
+import { useAddTransaction } from "../../hooks/useAddTransactions"
 function ExpenseTracker() {
+  const {addTransaction} = useAddTransaction() 
   return (  
   <>
     <div className='expense-tracker'>
