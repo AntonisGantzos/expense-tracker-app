@@ -2,6 +2,7 @@ import React from 'react'
 import { useAddTransaction } from "../../hooks/useAddTransactions"
 import { useGetTransaction } from "../../hooks/useGetTransactions"
 import { useState } from 'react'
+import '../../styles/ExpenseTracker.css'
 function ExpenseTracker() {
   const {addTransaction} = useAddTransaction() 
   const {transactions} = useGetTransaction()
