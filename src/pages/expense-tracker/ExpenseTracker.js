@@ -2,10 +2,12 @@ import React from 'react'
 import { useAddTransaction } from "../../hooks/useAddTransactions"
 import { useGetTransaction } from "../../hooks/useGetTransactions"
 import { useState } from 'react'
+import {useGetUserInfo} from "../../hooks/useGetUserInfo"
 import '../../styles/ExpenseTracker.css'
 function ExpenseTracker() {
   const {addTransaction} = useAddTransaction() 
   const {transactions} = useGetTransaction()
+  const {name, profilePhoto} = useGetUserInfo()
   const [description, setDescription] = useState("")
   const [transactionAmount, setTransactionAmount] = useState(0)
   const [transactionType, setTransactionType] = useState("expense")
@@ -44,6 +46,11 @@ function ExpenseTracker() {
           <button type='submit'>Add Transaction</button>
         </form>
       </div>
+      {profilePhoto && 
+      <div className="profile">
+        <img className="profile-photo" src={profilePhoto}/>
+        <button>Sign out</button>
+      </div>}
     </div>
     <div className='transactions'>
       <h3>Transactions</h3>
