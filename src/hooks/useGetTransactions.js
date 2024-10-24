@@ -10,8 +10,6 @@ export const useGetTransaction = () =>{
 
     const getTransaction = async () => {
         let unsubscribe
-        let totalIncome =0
-        let totalExpenses = 0 
     
         try{
             const queryTransactions = query(transactionCollectionRef, where("userID", "==", userID),
@@ -20,6 +18,8 @@ export const useGetTransaction = () =>{
 
             unsubscribe = onSnapshot(queryTransactions, (snapshot)=>{
                 let docs = []
+                let totalIncome =0
+                let totalExpenses = 0 
 
                 snapshot.forEach((doc)=>{
                     const data = doc.data()
