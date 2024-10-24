@@ -70,7 +70,7 @@ function ExpenseTracker() {
       </div>}
     </div>
     <div className='transactions'>
-      <h3>Transactions</h3>
+      <h3>My Transactions</h3>
       <ul>
         {
         transactions.map((transaction)=>{
